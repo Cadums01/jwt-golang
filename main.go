@@ -168,7 +168,7 @@ func StartServer() {
 
 	fmt.Println("Starting the application...")
 
-	router.HandleFunc("/auth", ValidateTokenMiddleware(CreateToken)).Methods("POST")
+	router.HandleFunc("/auth", CreateToken).Methods("POST")
 	router.HandleFunc("/user", ValidateTokenMiddleware(CreateUser)).Methods("POST")
 	router.HandleFunc("/user", ValidateTokenMiddleware(GetUser)).Methods("GET")
 
